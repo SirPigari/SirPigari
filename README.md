@@ -1,0 +1,7 @@
+- 👋 Hi, I’m @SirPigari
+- 👀 I’m interested in Python code
+- 🌱 I’m currently learning Java
+- 📫 How to reach me: https://www.youtube.com/@SirPigari
+- 😄 Pronouns: he/him
+- ⚡ Fun fact: we all gonna die... sometime
+- ⚡ Fun fact 2: i dont know why i am doing this
