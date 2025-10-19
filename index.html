@@ -929,8 +929,7 @@
                 <div class="about-card">
                     <div class="about-card-icon">04</div>
                     <h3>Location</h3>
-                    <p>Based in Považská Bystrica, Trenčín Region, Slovakia, Central Europe, Northern Hemisphere, Earth, Solar System, Orion Arm, Milky Way, Laniakea Supercluster, Virgo
-                    Supercluster Complex, Observable Universe, Hubble Volume, Cosmic Web</p>
+                    <p id="location-p">Based in Považská Bystrica, Slovakia</p>
                 </div>
             </div>
         </div>
@@ -976,6 +975,13 @@
             const yearElement = document.getElementById('year');
             if (yearElement) {
                 yearElement.textContent = new Date().getFullYear();
+            }
+
+            const locationP = document.getElementById('location-p');
+            if (locationP) {
+                if (Math.random() < 0.01) {
+                    locationP.textContent = "Based in Považská Bystrica, Trenčín Region, Slovakia, Central Europe, Northern Hemisphere, Earth, Solar System, Orion Arm, Milky Way, Laniakea Supercluster, Virgo Supercluster Complex, Observable Universe, Hubble Volume, Cosmic Web";
+                }
             }
 
             const sections = document.querySelectorAll('section[id]');
