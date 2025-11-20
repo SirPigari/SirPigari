@@ -1250,64 +1250,50 @@
                     return;
                 }
 
-                function resizeCanvas() {
+                const resizeCanvas = () => {
                     canvas.width = window.innerWidth;
                     canvas.height = window.innerHeight;
-                }
+                };
                 resizeCanvas();
                 window.addEventListener('resize', resizeCanvas);
 
-                function updateMousePosition(clientX, clientY) {
+                const updateMousePosition = (clientX, clientY) => {
                     const rect = canvas.getBoundingClientRect();
                     const x = (clientX - rect.left) / rect.width;
                     const y = (clientY - rect.top) / rect.height;
-                    
-                    if (window.Module && window.Module._updateMousePosition) {
+
+                    if (window.Module && typeof window.Module._updateMousePosition === 'function') {
                         window.Module._updateMousePosition(x, y);
                     }
-                }
+                };
 
-                canvas.addEventListener('mousemove', (e) => {
-                    updateMousePosition(e.clientX, e.clientY);
-                });
-
-                canvas.addEventListener('touchmove', (e) => {
-                    e.preventDefault();
-                    if (e.touches.length > 0) {
-                        updateMousePosition(e.touches[0].clientX, e.touches[0].clientY);
-                    }
-                }, { passive: false });
-
-                canvas.addEventListener('touchstart', (e) => {
-                    if (e.touches.length > 0) {
-                        updateMousePosition(e.touches[0].clientX, e.touches[0].clientY);
-                    }
+                ['mousemove', 'touchmove', 'touchstart'].forEach(eventType => {
+                    canvas.addEventListener(eventType, e => {
+                        e.preventDefault();
+                        const touch = e.touches ? e.touches[0] : null;
+                        const clientX = touch ? touch.clientX : e.clientX;
+                        const clientY = touch ? touch.clientY : e.clientY;
+                        updateMousePosition(clientX, clientY);
+                    }, { passive: false });
                 });
 
                 const heroSection = document.querySelector('.hero');
                 if (heroSection) {
-                    heroSection.addEventListener('mousemove', (e) => {
-                        updateMousePosition(e.clientX, e.clientY);
-                    });
-
-                    heroSection.addEventListener('touchmove', (e) => {
-                        e.preventDefault();
-                        if (e.touches.length > 0) {
-                            updateMousePosition(e.touches[0].clientX, e.touches[0].clientY);
-                        }
-                    }, { passive: false });
-
-                    heroSection.addEventListener('touchstart', (e) => {
-                        if (e.touches.length > 0) {
-                            updateMousePosition(e.touches[0].clientX, e.touches[0].clientY);
-                        }
+                    ['mousemove', 'touchmove', 'touchstart'].forEach(eventType => {
+                        heroSection.addEventListener(eventType, e => {
+                            e.preventDefault();
+                            const touch = e.touches ? e.touches[0] : null;
+                            const clientX = touch ? touch.clientX : e.clientX;
+                            const clientY = touch ? touch.clientY : e.clientY;
+                            updateMousePosition(clientX, clientY);
+                        }, { passive: false });
                     });
                 }
 
-                document.addEventListener('keydown', (e) => {
+                document.addEventListener('keydown', e => {
                     if (e.key === 'F3') {
                         e.preventDefault();
-                        if (window.Module && window.Module._toggleDebugMode) {
+                        if (window.Module && typeof window.Module._toggleDebugMode === 'function') {
                             window.Module._toggleDebugMode();
                         }
                     }
@@ -1315,32 +1301,29 @@
 
                 window.Module = {
                     canvas: canvas,
-                    onRuntimeInitialized: function() {
-                        console.log('Raylib WASM runtime initialized');
-                    },
                     preRun: [],
-                    postRun: [function() {
-                        console.log('WASM postRun completed');
-                    }]
+                    postRun: [() => console.log('WASM postRun completed')],
+                    onRuntimeInitialized: () => console.log('Raylib WASM runtime initialized'),
                 };
 
                 const script = document.createElement('script');
                 script.src = './wasm-raylib/main.js';
                 script.onload = () => {
                     console.log('Emscripten module script loaded');
-                    
+
                     setTimeout(() => {
-                        const canvas = document.getElementById('wasmCanvas');
-                        if (canvas) {
-                            canvas.addEventListener('wheel', (e) => {
+                        const c = document.getElementById('wasmCanvas');
+                        if (c) {
+                            c.addEventListener('wheel', e => {
                                 e.preventDefault();
                                 window.scrollBy(0, e.deltaY);
                             }, { passive: false });
                         }
                     }, 500);
                 };
-                script.onerror = (error) => {
-                    console.error('Failed to load Emscripten script:', error);
+
+                script.onerror = e => {
+                    console.error('Failed to load Emscripten script:', e);
                     const ctx = canvas.getContext('2d');
                     if (ctx) {
                         ctx.fillStyle = '#828282';
@@ -1349,7 +1332,7 @@
                         ctx.fillText('WASM Failed to Load', canvas.width / 2, canvas.height / 2);
                     }
                 };
-                
+
                 document.head.appendChild(script);
 
             } catch (error) {
