@@ -1,3 +1,15 @@
-[![Pronouns: he/his](https://img.shields.io/badge/Pronouns-he%2Fhis-88C0D0?style=flat-square)](https://en.pronouns.page/@markofwitch)
-> developer, femboy
-:3
+# Portfolio
+
+how to build wasm:
+
+```console
+cd ./wasm-raylib
+emcc main.c ./libraylib.a -o main.html -O3 -std=gnu99 -s USE_GLFW=3 -s ALLOW_MEMORY_GROWTH=1 -s WASM=1 -I /usr/include -DPLATFORM_WEB -sASYNCIFY -s EXPORTED_FUNCTIONS='["_main","_updateMousePosition","_toggleDebugMode"]' -s EXPORTED_RUNTIME_METHODS='["ccall","cwrap"]'
+```
+
+to run a local server:
+
+```console
+cd ..
+python3 -m http.server
+```
