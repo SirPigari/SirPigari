@@ -1,32 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Markofwitch - Developer Portfolio</title>
-    
+
     <!-- Meta Description -->
-    <meta name="description" content="14 year old developer building interpreters, compilers, and raylib projects. Experienced mainly in C and Rust.">
+    <meta name="description"
+        content="14 year old developer building interpreters, compilers, and raylib projects. Experienced mainly in C and Rust.">
     <meta name="author" content="Markofwitch">
     <meta name="keywords" content="developer, programmer, compilers, interpreters, raylib, C, Rust, Python, portfolio">
-    
+
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://sirpigari.github.io/SirPigari/">
     <meta property="og:title" content="Markofwitch - Developer Portfolio">
-    <meta property="og:description" content="14 year old developer building interpreters, compilers, and raylib projects. Check out my projects including Lucia programming language and F90C compiler.">
+    <meta property="og:description"
+        content="14 year old developer building interpreters, compilers, and raylib projects. Check out my projects including Lucia programming language and F90C compiler.">
     <meta property="og:image" content="https://sirpigari.github.io/SirPigari/assets/preview.webp">
-    
+
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="https://sirpigari.github.io/SirPigari/">
     <meta property="twitter:title" content="Markofwitch - Developer Portfolio">
-    <meta property="twitter:description" content="14 year old developer building interpreters, compilers, and raylib projects. Check out my projects including Lucia programming language and F90C compiler.">
+    <meta property="twitter:description"
+        content="14 year old developer building interpreters, compilers, and raylib projects. Check out my projects including Lucia programming language and F90C compiler.">
     <meta property="twitter:image" content="https://sirpigari.github.io/SirPigari/assets/preview.webp">
-    
+
     <!-- Theme Color -->
     <meta name="theme-color" content="#505050">
-    
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
     <style>
@@ -64,8 +68,13 @@
             font-size: 16px;
         }
 
-        code, .mono {
+        code,
+        .mono {
             font-family: "JetBrains Mono", "Fira Code", "Consolas", monospace;
+        }
+
+        strong {
+            color: var(--primary-darker);
         }
 
         /* ===== SIDE NAVIGATION ===== */
@@ -206,9 +215,9 @@
             left: 0;
             width: 100%;
             height: 70%;
-            background: linear-gradient(to top, 
-                rgba(245, 245, 245, 1) 0%, 
-                rgba(245, 245, 245, 0) 30%);
+            background: linear-gradient(to top,
+                    rgba(245, 245, 245, 1) 0%,
+                    rgba(245, 245, 245, 0) 30%);
             pointer-events: none;
             z-index: 2;
         }
@@ -441,7 +450,7 @@
             left: 0;
             right: 0;
             bottom: 0;
-            background: 
+            background:
                 linear-gradient(90deg, var(--primary) 1px, transparent 1px),
                 linear-gradient(0deg, var(--primary) 1px, transparent 1px);
             background-size: 20px 20px;
@@ -662,6 +671,16 @@
             background: var(--secondary);
         }
 
+        .text_link {
+            text-decoration: none;
+            color: var(--primary-darker);
+            /* font-weight: bold; */
+        }
+
+        .text_link:hover {
+            color: var(--text-primary);
+        }
+
         /* ===== FOOTER ===== */
         footer {
             background: var(--secondary);
@@ -736,7 +755,8 @@
                 padding: calc(var(--spacing) * 2) var(--spacing);
             }
 
-            #projects, #about {
+            #projects,
+            #about {
                 min-height: 0;
                 padding: var(--spacing);
             }
@@ -862,6 +882,7 @@
         }
 
         @media (prefers-reduced-motion: reduce) {
+
             *,
             *::before,
             *::after {
@@ -883,6 +904,7 @@
         }
     </style>
 </head>
+
 <body>
     <!-- ===== SIDE NAVIGATION ===== -->
     <nav class="side-nav">
@@ -898,11 +920,12 @@
             Your browser doesn't support canvas.
         </canvas>
         <div class="hero-canvas-fade"></div>
-        
+
         <div class="hero-container">
             <div class="hero-content">
                 <div class="hero-name">Markofwitch</div>
-                <h1 class="hero-title">I'm a <span class="age" id="age">14</span> year old dev and I build interpreters, compilers, and raylib things</h1>
+                <h1 class="hero-title">I'm a <span class="age" id="age">14</span> year old dev and I build interpreters,
+                    compilers, and raylib things</h1>
                 <div class="hero-langs">
                     <span class="lang-icon"><i class="devicon-c-plain"></i> </span>
                     <span class="lang-icon"><i class="devicon-rust-plain"></i>Rust</span>
@@ -914,21 +937,27 @@
                 </div>
                 <div class="hero-cta">
                     <a href="#projects" class="btn">View projects</a>
-                    <a href="#experience" class="btn btn-secondary">View experience</a>
+                    <!-- TODO: remind -->
+                    <!-- <a href="#experience" class="btn btn-secondary">View experience</a>-->
+                    <a href="#about" style="min-width: 23ch; text-align: center;" class="btn btn-secondary">See
+                        about</a>
                 </div>
             </div>
-                
+
             <div class="info-grid">
                 <div class="info-section">
                     <h3>Connect</h3>
                     <div class="contact-icons">
-                        <a href="https://github.com/SirPigari" class="contact-icon" title="GitHub" target="_blank" rel="noopener noreferrer">
+                        <a href="https://github.com/SirPigari" class="contact-icon" title="GitHub" target="_blank"
+                            rel="noopener noreferrer">
                             <i class="fab fa-github"></i>
                         </a>
-                        <a href="https://discord.com/users/SirPigari" class="contact-icon" title="Discord" target="_blank" rel="noopener noreferrer">
+                        <a href="https://discord.com/users/SirPigari" class="contact-icon" title="Discord"
+                            target="_blank" rel="noopener noreferrer">
                             <i class="fab fa-discord"></i>
                         </a>
-                        <a href="mailto:leonardmarkovic015@gmail.com" class="contact-icon" title="Email">
+                        <a href="&#109;&#97;&#105;&#108;&#116;&#111;&#58;&#108;&#101;&#111;&#110;&#97;&#114;&#100;&#109;&#97;&#114;&#107;&#111;&#118;&#105;&#99;&#48;&#49;&#53;&#64;&#103;&#109;&#97;&#105;&#108;&#46;&#99;&#111;&#109;"
+                            class="contact-icon" title="Email">
                             <i class="fas fa-envelope"></i>
                         </a>
                         <a href="/resume/here_would_be_a_resume.pdf" class="contact-icon" title="Resume" download>
@@ -939,7 +968,8 @@
 
                 <div class="info-section">
                     <h3>Location</h3>
-                    <a href="https://maps.google.com/?q=Slovakia,+Povazska+Bystrica" class="location-link" target="_blank" rel="noopener noreferrer">
+                    <a href="https://maps.google.com/?q=Slovakia,+Povazska+Bystrica" class="location-link"
+                        target="_blank" rel="noopener noreferrer">
                         <i class="fas fa-map-marker-alt"></i>
                         <span>Považská Bystrica, Slovakia</span>
                     </a>
@@ -958,13 +988,16 @@
             <div class="projects-grid">
                 <!-- Project 1 -->
                 <div class="project-card">
-                    <a href="https://github.com/SirPigari/lucia-rust#readme" target="_blank" class="project-image"><img src="assets/logo_lucia.png" alt="Lucia - Programming Language"></a>
+                    <a href="https://github.com/SirPigari/lucia-rust#readme" target="_blank" class="project-image"><img
+                            src="assets/logo_lucia.png" alt="Lucia - Programming Language"></a>
                     <div class="project-content">
                         <h3>Lucia - Programming Language</h3>
                         <p>A lightweight, expressive scripting language with Python-like syntax.</p>
                         <div class="project-buttons">
-                            <a target="_blank" href="https://github.com/SirPigari/lucia-rust#readme" class="btn-small">Source</a>
-                            <a target="_blank" href="https://sirpigari.github.io/lucia-playground/" class="btn-small secondary">Live</a>
+                            <a target="_blank" href="https://github.com/SirPigari/lucia-rust#readme"
+                                class="btn-small">Source</a>
+                            <a target="_blank" href="https://sirpigari.github.io/lucia-playground/"
+                                class="btn-small secondary">Live</a>
                         </div>
                         <div class="project-tags">
                             <span class="tag">interpreter</span>
@@ -977,11 +1010,13 @@
                 <!-- Project 2 -->
                 <div class="project-card">
                     <a href="https://github.com/SirPigari/f90c#readme" target="_blank" class="project-image"><img
-                            src="assets/logo_f90c.png" alt="F90C - Fortran 90 Compiler"></a><div class="project-content">
+                            src="assets/logo_f90c.png" alt="F90C - Fortran 90 Compiler"></a>
+                    <div class="project-content">
                         <h3>F90C - Fortran 90 Compiler</h3>
                         <p>A lightweight single executable Fortran 90 compiler.</p>
                         <div class="project-buttons">
-                            <a target="_blank" href="https://github.com/SirPigari/f90c#readme" class="btn-small">Source</a>
+                            <a target="_blank" href="https://github.com/SirPigari/f90c#readme"
+                                class="btn-small">Source</a>
                         </div>
                         <div class="project-tags">
                             <span class="tag">compiler</span>
@@ -993,12 +1028,16 @@
 
                 <!-- Project 3 -->
                 <div class="project-card">
-                    <a href="https://github.com/SirPigari/lym#readme" style="text-decoration: none;" target="_blank" class="project-image"><h1>Lym</h1></a>
+                    <a href="https://github.com/SirPigari/lym#readme" style="text-decoration: none;" target="_blank"
+                        class="project-image">
+                        <h1>Lym</h1>
+                    </a>
                     <div class="project-content">
                         <h3>Lym - Lucia package manager</h3>
                         <p>A package manager for the Lucia programming language.</p>
                         <div class="project-buttons">
-                            <a target="_blank" href="https://github.com/SirPigari/lym#readme" class="btn-small">Source</a>
+                            <a target="_blank" href="https://github.com/SirPigari/lym#readme"
+                                class="btn-small">Source</a>
                         </div>
                         <div class="project-tags">
                             <span class="tag">package manager</span>
@@ -1010,14 +1049,17 @@
 
                 <!-- Project 4 -->
                 <div class="project-card">
-                    <a href="https://github.com/SirPigari/uwufetch#readme" style="text-decoration: none;" target="_blank" class="project-image">
+                    <a href="https://github.com/SirPigari/uwufetch#readme" style="text-decoration: none;"
+                        target="_blank" class="project-image">
                         <h1>uwufetch-rs</h1>
                     </a>
                     <div class="project-content">
                         <h3>uwufetch</h3>
-                        <p>A fetch tool written which display system information in a uwu cute style. (I didn't like neofetch)</p>
+                        <p>A fetch tool written which display system information in a uwu cute style. (I didn't like
+                            neofetch)</p>
                         <div class="project-buttons">
-                            <a target="_blank" href="https://github.com/SirPigari/uwufetch#readme" class="btn-small">Source</a>
+                            <a target="_blank" href="https://github.com/SirPigari/uwufetch#readme"
+                                class="btn-small">Source</a>
                         </div>
                         <div class="project-tags">
                             <span class="tag">rust</span>
@@ -1029,15 +1071,18 @@
 
                 <!-- Project 5 -->
                 <div class="project-card">
-                    <a href="https://github.com/SirPigari/ImagNum#readme" style="text-decoration: none;" target="_blank" class="project-image">
+                    <a href="https://github.com/SirPigari/ImagNum#readme" style="text-decoration: none;" target="_blank"
+                        class="project-image">
                         <h1>ImagNum</h1>
                     </a>
                     <div class="project-content">
                         <h3>ImagNum</h3>
                         <p>Library for numeric types made for Lucia programming language.</p>
                         <div class="project-buttons">
-                            <a target="_blank" href="https://github.com/SirPigari/ImagNum#readme" class="btn-small">Source</a>
-                            <a target="_blank" href="https://crates.io/crates/imagnum" class="btn-small secondary">Crates.io</a>
+                            <a target="_blank" href="https://github.com/SirPigari/ImagNum#readme"
+                                class="btn-small">Source</a>
+                            <a target="_blank" href="https://crates.io/crates/imagnum"
+                                class="btn-small secondary">Crates.io</a>
                         </div>
                         <div class="project-tags">
                             <span class="tag">rust</span>
@@ -1049,13 +1094,14 @@
 
                 <!-- Project 6 -->
                 <div class="project-card">
-                    <a href="https://github.com/SirPigari/skittle-chan#readme" target="_blank" class="project-image"><img
-                            src="assets/icon_skittle-chan.jpg" alt="Skittle-chan"></a>
+                    <a href="https://github.com/SirPigari/skittle-chan#readme" target="_blank"
+                        class="project-image"><img src="assets/icon_skittle-chan.jpg" alt="Skittle-chan"></a>
                     <div class="project-content">
                         <h3>Skittle-chan</h3>
                         <p>A cute discord bot.</p>
                         <div class="project-buttons">
-                            <a target="_blank" href="https://github.com/SirPigari/skittle-chan#readme" class="btn-small">Source</a>
+                            <a target="_blank" href="https://github.com/SirPigari/skittle-chan#readme"
+                                class="btn-small">Source</a>
                             <a target="_blank" href="https://discord.com/activities/1210290698675560499?referrer_id=1009586717315059793
                             " class="btn-small secondary">Discord</a>
                         </div>
@@ -1079,13 +1125,24 @@
             <div class="about-grid">
                 <div class="about-card">
                     <div class="about-card-icon">01</div>
-                    <h3>Compilers & Interpreters</h3>
-                    <p>Writes interpreters and compilers including own imperative language and Fortran 90 compiler</p>
+                    <h3>Personal</h3>
+                    <!-- TODO: remind me in a year -->
+                    <p id="location-p">
+                        My name is <strong>Leonard Markovič</strong>, i am currently in <a class="text_link"
+                            href="https://en.wikipedia.org/wiki/Education_in_Slovakia" target="_blank">primary school
+                            (8th
+                            grade)</a>
+                        and i
+                        like
+                        photography (<a class="text_link" href="https://en.wikipedia.org/wiki/Nikon_D800"
+                            target="_blank">Nikon
+                            D800</a>)
+                    </p>
                 </div>
                 <div class="about-card">
                     <div class="about-card-icon">02</div>
-                    <h3>Tools & Frameworks</h3>
-                    <p>Uses raylib and emacs for development workflow (nobody cares)</p>
+                    <h3>Compilers & Interpreters</h3>
+                    <p>Writes interpreters and compilers including own imperative language and Fortran 90 compiler</p>
                 </div>
                 <div class="about-card">
                     <div class="about-card-icon">03</div>
@@ -1094,8 +1151,8 @@
                 </div>
                 <div class="about-card">
                     <div class="about-card-icon">04</div>
-                    <h3>Location</h3>
-                    <p id="location-p">Based in Považská Bystrica, Slovakia</p>
+                    <h3>Tools & Frameworks</h3>
+                    <p>Uses raylib and emacs for development workflow (nobody cares)</p>
                 </div>
             </div>
         </div>
@@ -1124,15 +1181,15 @@
             const today = new Date();
             let age = today.getFullYear() - birthDate.getFullYear();
             const monthDiff = today.getMonth() - birthDate.getMonth();
-            
+
             if (monthDiff < 0 || (monthDiff === 0 && today.getDate() < birthDate.getDate())) {
                 age--;
             }
-            
+
             return age;
         }
 
-        document.addEventListener('DOMContentLoaded', function() {
+        document.addEventListener('DOMContentLoaded', function () {
             const ageElement = document.getElementById('age');
             if (ageElement) {
                 ageElement.textContent = calculateAge();
@@ -1175,7 +1232,7 @@
         });
 
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function(e) {
+            anchor.addEventListener('click', function (e) {
                 e.preventDefault();
                 const target = document.querySelector(this.getAttribute('href'));
                 if (target) {
@@ -1204,7 +1261,7 @@
                     projectsContainer.style.padding = 'var(--spacing)';
                     projectsHeader.style.cursor = 'pointer';
                     projectsHeader.style.position = 'relative';
-                    
+
                     if (!projectsHeader.querySelector('.collapse-indicator')) {
                         const indicator = document.createElement('span');
                         indicator.className = 'collapse-indicator';
@@ -1214,8 +1271,8 @@
                         indicator.style.transition = 'transform 0.3s';
                         projectsHeader.appendChild(indicator);
                     }
-                    
-                    projectsHeader.addEventListener('click', function() {
+
+                    projectsHeader.addEventListener('click', function () {
                         const isHidden = projectsSection.style.display === 'none';
                         projectsSection.style.display = isHidden ? 'grid' : 'none';
                         const indicator = projectsHeader.querySelector('.collapse-indicator');
@@ -1232,7 +1289,7 @@
                     aboutContainer.style.padding = 'var(--spacing)';
                     aboutHeader.style.cursor = 'pointer';
                     aboutHeader.style.position = 'relative';
-                    
+
                     if (!aboutHeader.querySelector('.collapse-indicator')) {
                         const indicator = document.createElement('span');
                         indicator.className = 'collapse-indicator';
@@ -1243,8 +1300,8 @@
                         indicator.style.transform = 'rotate(180deg)';
                         aboutHeader.appendChild(indicator);
                     }
-                    
-                    aboutHeader.addEventListener('click', function() {
+
+                    aboutHeader.addEventListener('click', function () {
                         const isHidden = aboutSection.style.display === 'none';
                         aboutSection.style.display = isHidden ? 'grid' : 'none';
                         const indicator = aboutHeader.querySelector('.collapse-indicator');
@@ -1322,12 +1379,17 @@
                     }
                 });
 
-                window.Module = {
-                    canvas: canvas,
-                    preRun: [],
-                    postRun: [() => console.log('WASM postRun completed')],
-                    onRuntimeInitialized: () => console.log('Raylib WASM runtime initialized'),
-                };
+                const wasmReady = new Promise(resolve => {
+                    window.Module = {
+                        canvas: canvas,
+                        preRun: [],
+                        postRun: [() => console.log('WASM postRun completed')],
+                        onRuntimeInitialized: () => {
+                            console.log('Raylib WASM runtime initialized');
+                            resolve();
+                        },
+                    };
+                });
 
                 const script = document.createElement('script');
                 script.src = './wasm-raylib/main.js';
@@ -1358,6 +1420,10 @@
 
                 document.head.appendChild(script);
 
+                await wasmReady;
+                console.log('WASM fully loaded and ready');
+
+                return true;
             } catch (error) {
                 console.error('Failed to initialize WASM:', error);
                 const canvas = document.getElementById('wasmCanvas');
@@ -1374,4 +1440,5 @@
         window.addEventListener('load', initWasmCanvas);
     </script>
 </body>
+
 </html>
