@@ -1318,6 +1318,8 @@
 
         async function initWasmCanvas() {
             try {
+                let wasmReadyFlag = false;
+
                 // wasm disabled on mobile because it didnt look good.
                 if (window.innerWidth <= 768) {
                     console.log('Mobile detected, skipping WASM initialization');
@@ -1338,6 +1340,8 @@
                 window.addEventListener('resize', resizeCanvas);
 
                 const updateMousePosition = (clientX, clientY) => {
+                    if (!wasmReadyFlag) return;
+
                     const rect = canvas.getBoundingClientRect();
                     const x = (clientX - rect.left) / rect.width;
                     const y = (clientY - rect.top) / rect.height;
@@ -1386,6 +1390,7 @@
                         postRun: [() => console.log('WASM postRun completed')],
                         onRuntimeInitialized: () => {
                             console.log('Raylib WASM runtime initialized');
+                            wasmReadyFlag = true;
                             resolve();
                         },
                     };
@@ -1421,6 +1426,12 @@
                 document.head.appendChild(script);
 
                 await wasmReady;
+
+                const reducedMotionEnabled = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+                if (window.Module && typeof window.Module._setReducedMotion === "function") {
+                    window.Module._setReducedMotion(reducedMotionEnabled ? 1 : 0);
+                }
+
                 console.log('WASM fully loaded and ready');
 
                 return true;

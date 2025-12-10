@@ -30,8 +30,10 @@ static float mouseY = 0.5f;
 static float cameraYaw = -135.0f;
 static float cameraPitch = -35.0f;
 static bool debugMode = false;
+static bool preferrsReducedMotion = false;
 
 const float GRAVITY = 9.8f;
+const float SENSITIVITY = 10.0f;
 
 #if defined(PLATFORM_WEB)
 void EMSCRIPTEN_KEEPALIVE updateMousePosition(float x, float y) {
@@ -42,6 +44,11 @@ void EMSCRIPTEN_KEEPALIVE updateMousePosition(float x, float y) {
 void EMSCRIPTEN_KEEPALIVE toggleDebugMode(void) {
     debugMode = !debugMode;
     TraceLog(LOG_INFO, "Debug mode: %s", debugMode ? "ON" : "OFF");
+}
+
+void EMSCRIPTEN_KEEPALIVE setReducedMotion(bool enabled) {
+    preferrsReducedMotion = enabled;
+    TraceLog(LOG_INFO, "Reduced motion: %s", preferrsReducedMotion ? "ON" : "OFF");
 }
 #endif
 
@@ -142,33 +149,33 @@ void gameLoop(void *arg){
     float dt = t - lastTime;
     lastTime = t;
 
-    float sensitivity = 10.0f;
-    
-    float targetYaw = -135.0f + (mouseX - 0.5f) * sensitivity;
-    
-    float targetPitch = -35.0f;
-    if (mouseY < 0.35f) {
-        targetPitch = -35.0f + (0.5f - mouseY) * sensitivity;
-    } else {
-        targetPitch = -35.0f - (mouseY - 0.5f) * sensitivity;
+    if (!preferrsReducedMotion) {
+        float targetYaw = -135.0f + (mouseX - 0.5f) * SENSITIVITY;
+        
+        float targetPitch = -35.0f;
+        if (mouseY < 0.35f) {
+            targetPitch = -35.0f + (0.5f - mouseY) * SENSITIVITY;
+        } else {
+            targetPitch = -35.0f - (mouseY - 0.5f) * SENSITIVITY;
+        }
+        
+        if (targetYaw > -135.0f + 25.0f) targetYaw = -135.0f + 25.0f;
+        if (targetYaw < -135.0f - 25.0f) targetYaw = -135.0f - 25.0f;
+        if (targetPitch > -35.0f + 25.0f) targetPitch = -35.0f + 25.0f;
+        if (targetPitch < -35.0f - 25.0f) targetPitch = -35.0f - 25.0f;
+        
+        float smoothSpeed = 5.0f * dt;
+        cameraYaw += (targetYaw - cameraYaw) * smoothSpeed;
+        cameraPitch += (targetPitch - cameraPitch) * smoothSpeed;
+        
+        Vector3 direction;
+        direction.x = cosf(cameraYaw * DEG2RAD) * cosf(cameraPitch * DEG2RAD);
+        direction.y = sinf(cameraPitch * DEG2RAD);
+        direction.z = sinf(cameraYaw * DEG2RAD) * cosf(cameraPitch * DEG2RAD);
+        
+        cam->position = (Vector3){10.0f, 10.0f, 10.0f};
+        cam->target = Vector3Add(cam->position, direction);
     }
-    
-    if (targetYaw > -135.0f + 25.0f) targetYaw = -135.0f + 25.0f;
-    if (targetYaw < -135.0f - 25.0f) targetYaw = -135.0f - 25.0f;
-    if (targetPitch > -35.0f + 25.0f) targetPitch = -35.0f + 25.0f;
-    if (targetPitch < -35.0f - 25.0f) targetPitch = -35.0f - 25.0f;
-    
-    float smoothSpeed = 5.0f * dt;
-    cameraYaw += (targetYaw - cameraYaw) * smoothSpeed;
-    cameraPitch += (targetPitch - cameraPitch) * smoothSpeed;
-    
-    Vector3 direction;
-    direction.x = cosf(cameraYaw * DEG2RAD) * cosf(cameraPitch * DEG2RAD);
-    direction.y = sinf(cameraPitch * DEG2RAD);
-    direction.z = sinf(cameraYaw * DEG2RAD) * cosf(cameraPitch * DEG2RAD);
-    
-    cam->position = (Vector3){10.0f, 10.0f, 10.0f};
-    cam->target = Vector3Add(cam->position, direction);
 
     if(t >= nextSpawnTime){
         spawnCube(*cam);
@@ -196,6 +203,9 @@ void gameLoop(void *arg){
     if (debugMode) {
         DrawText(TextFormat("Cursor at: %.3f, %.3f", mouseX, mouseY), 10, 40, 20, DARKGRAY);
         DrawText(TextFormat("Camera yaw: %.2f, pitch %.2f", cameraYaw, cameraPitch), 10, 70, 20, DARKGRAY);
+        if (preferrsReducedMotion) {
+            DrawText("Reduced Motion is preferred", 10, 100, 20, DARKGRAY);
+        }
     }
     DrawFPS(10, 10);
     EndDrawing();
