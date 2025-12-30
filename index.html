@@ -650,6 +650,12 @@
             color: var(--text-secondary);
         }
 
+        /* ==== EXPERIENCE CONTRIBUTIONS ===== */
+        /* .experience-contributions {
+            margin-top: var(--spacing);
+            text-align: center;
+        } */
+
         .contact-link:focus {
             outline: 2px solid var(--blue);
             outline-offset: 4px;
@@ -1094,13 +1100,13 @@
 
                 <!-- Project 6 -->
                 <div class="project-card">
-                    <a href="https://github.com/SirPigari/skittle-chan#readme" target="_blank"
+                    <a href="https://gitlab.com/SirPigari/skittle-chan#skittle-chan" target="_blank"
                         class="project-image"><img src="assets/icon_skittle-chan.jpg" alt="Skittle-chan"></a>
                     <div class="project-content">
                         <h3>Skittle-chan</h3>
                         <p>A cute discord bot.</p>
                         <div class="project-buttons">
-                            <a target="_blank" href="https://github.com/SirPigari/skittle-chan#readme"
+                            <a target="_blank" href="https://gitlab.com/SirPigari/skittle-chan#skittle-chan"
                                 class="btn-small">Source</a>
                             <a target="_blank" href="https://discord.com/activities/1210290698675560499?referrer_id=1009586717315059793
                             " class="btn-small secondary">Discord</a>
@@ -1171,8 +1177,18 @@
                 <p>I didn't work in any company or any actual work yet, just personal projects.</p>
                 <p>Skill issue ik</p>
             </div>
+            <!-- <div class="experience-contributions">
+                <img src="https://ghchart.rshah.org/SirPigari" alt="GitHub Contributions Graph"
+                    style="width: 100%; max-width: 800px; height: auto;">
+            </div> -->
         </div>
     </section>
+
+    <!-- <script>
+        const primaryColor = getComputedStyle(document.documentElement).getPropertyValue('--secondary').trim().replace('#', '');
+        const img = document.querySelector('.experience-contributions img');
+        img.src = `https://ghchart.rshah.org/${primaryColor}/SirPigari`;
+    </script> -->
 
     <!-- ===== JAVASCRIPT ===== -->
     <script>
