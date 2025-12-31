@@ -13,3 +13,9 @@ to run a local server:
 cd ..
 python3 -m http.server
 ```
+
+## License
+
+Nobody is going to steal my code but license is needed
+
+[MIT License](./LICENSE)
