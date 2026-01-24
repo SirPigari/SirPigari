@@ -1,0 +1,234 @@
+[
+    {
+        "title": "Always on My Mind",
+        "artist": "Pet Shop Boys",
+        "file": "aomm.opus",
+        "rating": 10,
+        "youtube": "https://youtu.be/wDe60CbIagg",
+        "spotify": "https://open.spotify.com/track/07ABETRdek3ACMpRPvQuaT"
+    },
+    {
+        "title": "Beautiful Day",
+        "artist": "U2",
+        "file": "bd.opus",
+        "rating": 6,
+        "youtube": "https://youtu.be/co6WMzDOh1o",
+        "spotify": "https://open.spotify.com/track/0gzqZ9d1jIKo9psEIthwXe"
+    },
+    {
+        "title": "Blackhole Sun",
+        "artist": "Soundgarden",
+        "file": "bhs.opus",
+        "rating": 8,
+        "youtube": "https://youtu.be/3mbBbFH9fAg",
+        "spotify": "https://open.spotify.com/track/2EoOZnxNgtmZaD8uUmz2nD"
+    },
+    {
+        "title": "Borderline",
+        "artist": "Tame Impala",
+        "file": "bl.opus",
+        "rating": 9.6,
+        "youtube": "https://youtu.be/2g5xkLqIElU",
+        "spotify": "https://open.spotify.com/track/5hM5arv9KDbCHS0k9uqwjr"
+    },
+    {
+        "title": "Climbatize",
+        "artist": "Prodigy",
+        "file": "cbz.opus",
+        "rating": 10,
+        "youtube": "https://youtu.be/HuZTEsvgQko",
+        "spotify": "https://open.spotify.com/track/3INwNKmHGuV2S8E6NTpfEJ"
+    },
+    {
+        "title": "Crazy",
+        "artist": "Seal",
+        "file": "c.opus",
+        "rating": 9.9,
+        "youtube": "https://youtu.be/4Fc67yQsPqQ",
+        "spotify": "https://open.spotify.com/track/10tdqQKFhddpkjzxllTVRj"
+    },
+    {
+        "title": "Crucified",
+        "artist": "Army of Lovers",
+        "file": "cf.opus",
+        "rating": 6.5,
+        "youtube": "https://youtu.be/di18hTFTwIw",
+        "spotify": "https://open.spotify.com/track/09OKEiKltU6AvvrEtE92OY"
+    },
+    {
+        "title": "Dissappear",
+        "artist": "INXS",
+        "file": "d.opus",
+        "rating": 8,
+        "youtube": "https://youtu.be/Xvo-bfaVsg0",
+        "spotify": "https://open.spotify.com/track/2wg6RV3N9GoUMURfhxMJ3P"
+    },
+    {
+        "title": "End of Summer",
+        "artist": "Tame Impala",
+        "file": "eos.opus",
+        "rating": 8.5,
+        "youtube": "https://youtu.be/ulkdUfItyxI",
+        "spotify": "https://open.spotify.com/track/3McBKxKZLXbE4czUezk5QG"
+    },
+    {
+        "title": "Enjoy the Silence",
+        "artist": "Depeche Mode",
+        "file": "ets.opus",
+        "rating": 9.7,
+        "youtube": "https://youtu.be/aGSKrC7dGcY",
+        "spotify": "https://open.spotify.com/track/6WK9dVrRABMkUXFLNlgWFh"
+    },
+    {
+        "title": "Eventually",
+        "artist": "Tame Impala",
+        "file": "ev.opus",
+        "rating": 9.2,
+        "youtube": "https://youtu.be/GHe8kKO8uds",
+        "spotify": "https://open.spotify.com/track/5M4yti0QxgqJieUYaEXcpw"
+    },
+    {
+        "title": "Heavy Metal Love",
+        "artist": "twocolors",
+        "file": "hml.opus",
+        "rating": 8.69,
+        "youtube": "https://youtu.be/OPnUSD-4Ye8",
+        "spotify": "https://open.spotify.com/track/07VcTAooOBP8hIluuUS5xr"
+    },
+    {
+        "title": "It ain't over 'til it's over",
+        "artist": "Lenny Kravitz",
+        "file": "iaotio.opus",
+        "rating": 9,
+        "youtube": "https://youtu.be/TmENMZFUU_0",
+        "spotify": "https://open.spotify.com/track/6VnpKLtfNH4Dk09YSGPSyR"
+    },
+    {
+        "title": "It is not meant to be",
+        "artist": "Tame Impala",
+        "file": "iintb.opus",
+        "rating": 7,
+        "youtube": "https://youtu.be/VpLXxFhy7s4",
+        "spotify": "https://open.spotify.com/track/3Yub3anoLj8w58TVpEXUJv"
+    },
+    {
+        "title": "Let it Happen",
+        "artist": "Tame Impala",
+        "file": "lih.opus",
+        "rating": 7.1,
+        "youtube": "https://youtu.be/odeHP8N4LKc",
+        "spotify": "https://open.spotify.com/track/2X485T9Z5Ly0xyaghN73ed"
+    },
+    {
+        "title": "List of People (To Try and Forget About)",
+        "artist": "Tame Impala",
+        "file": "lopttafab.opus",
+        "rating": 9,
+        "youtube": "https://youtu.be/RwaYflHAIGQ",
+        "spotify": "https://open.spotify.com/track/01iiEi9h8CQGUN2K1xBbTj"
+    },
+    {
+        "title": "My Body is a Cage",
+        "artist": "Peter Gabriel",
+        "file": "mbiac.opus",
+        "rating": 8,
+        "youtube": "https://youtu.be/zbpZFvrerHM",
+        "spotify": "https://open.spotify.com/track/4twUOeCkhmAAe9SPteYlD0"
+    },
+    {
+        "title": "Narayan",
+        "artist": "The Prodigy",
+        "file": "n.opus",
+        "rating": 9.6,
+        "youtube": "https://youtu.be/Bv58y2w6dGk",
+        "spotify": "https://open.spotify.com/track/32rLiB4MPCGWrIBypX8WYf"
+    },
+    {
+        "title": "Open Your Mind",
+        "artist": "U.S.U.R.A.",
+        "file": "oym.opus",
+        "rating": 9.9,
+        "youtube": "https://youtu.be/TPFAYIr8z2I",
+        "spotify": "https://open.spotify.com/track/2VYlbeHymVKN0ABoU16DTI"
+    },
+    {
+        "title": "Shiver",
+        "artist": "Natalie Imbruglia",
+        "file": "s.opus",
+        "rating": 10,
+        "youtube": "https://youtu.be/ZwAd_ag9Q0E",
+        "spotify": "https://open.spotify.com/track/2ZudaDYcCTgqqYPV0TrNn8"
+    },
+    {
+        "title": "Sowing the Seeds of Love",
+        "artist": "Tears for Fears",
+        "file": "stsol.opus",
+        "rating": 10,
+        "youtube": "https://youtu.be/VAtGOESO7W8",
+        "spotify": "https://open.spotify.com/track/5bEr0tYW6xvT73OiKVcEgq"
+    },
+    {
+        "title": "Speed of Sound",
+        "artist": "Coldplay",
+        "file": "sos.opus",
+        "rating": 10,
+        "youtube": "https://youtu.be/0k_1kvDh2UA",
+        "spotify": "https://open.spotify.com/track/7clUVcSOtkNWa58Gw5RfD4"
+    },
+    {
+        "title": "Sundown Syndrome",
+        "artist": "Tame Impala",
+        "file": "ss.opus",
+        "rating": 9.5,
+        "youtube": "https://youtu.be/N3h5WGGrmXc",
+        "spotify": "https://open.spotify.com/track/3ZuT0Evo8chdVM6rPXXqgd"
+    },
+    {
+        "title": "Sunrise",
+        "artist": "Simply Red",
+        "file": "sr.opus",
+        "rating": 8,
+        "youtube": "https://youtu.be/PE3g2zeBVQQ",
+        "spotify": "https://open.spotify.com/track/0jGVEPscW8KmqktoHqv2Pa"
+    },
+    {
+        "title": "The Less I Know The Better",
+        "artist": "Tame Impala",
+        "file": "tliktb.opus",
+        "rating": 9.8,
+        "youtube": "https://youtu.be/2SUwOgmvzK4",
+        "spotify": "https://open.spotify.com/track/6K4t31amVTZDgR3sKmwUJJ"
+    },
+    {
+        "title": "The Moment",
+        "artist": "Tame Impala",
+        "file": "tm.opus",
+        "rating": 8,
+        "youtube": "https://youtu.be/3Qpf9pAkUeI",
+        "spotify": "https://open.spotify.com/track/1UYj8qTWjneZJDVjUMwMub"
+    },
+    {
+        "title": "The Road to Mandalay",
+        "artist": "Robbie Williams",
+        "file": "trtm.opus",
+        "rating": 10,
+        "youtube": "https://youtu.be/KohurXfPb7s",
+        "spotify": "https://open.spotify.com/track/2HEQUu0ydMFIp6JDvCHFzZ"
+    },
+    {
+        "title": "Virtual Insanity",
+        "artist": "Jamiroquai",
+        "file": "vi.opus",
+        "rating": 9.4,
+        "youtube": "https://youtu.be/4JkIs37a2JE",
+        "spotify": "https://open.spotify.com/track/47W6YR93MPCGLEUReLMyDm"
+    },
+    {
+        "title": "West End Girls",
+        "artist": "Pet Shop Boys",
+        "file": "wep.opus",
+        "rating": 9.8,
+        "youtube": "https://youtu.be/p3j2NYZ8FKs",
+        "spotify": "https://open.spotify.com/track/5Dqik1P9toCJTLj5rEm78s"
+    }
+]
