@@ -14,7 +14,7 @@ const spotifyLink = document.getElementById('spotify-link')
 let songs = []
 let currentIndex = 0
 let audio = new Audio()
-
+let currentRating = -1
 
 fetch('songs/songs.json')
     .then(r => r.json())
@@ -97,6 +97,7 @@ function handleUrlSongSelect() {
         });
         if (minIdx !== -1) {
             songIdx = minIdx;
+            currentRating = songs[minIdx].rating !== undefined ? songs[minIdx].rating : -1;
             loadedFromUrl = true;
         }
     }
@@ -122,6 +123,7 @@ function renderPlaylist() {
         li.textContent = song.title;
         li.addEventListener('click', () => {
             loadSong(i, true);
+            currentRating = songs[i].rating !== undefined ? songs[i].rating : -1;
             playBtn.innerHTML = '<i class="fas fa-pause"></i>';
         });
         playlistEl.appendChild(li);
@@ -157,6 +159,7 @@ function loadSong(index, playOnLoad = false, urlVolume = null, urlTime = null) {
     audio.src = `songs/${song.file}`;
     audio.load();
     timelineEl.value = 0;
+    currentRating = songs[index].rating !== undefined ? songs[index].rating : -1;
     currentTimeEl.textContent = '0:00';
     if (playOnLoad) {
         audio.play();

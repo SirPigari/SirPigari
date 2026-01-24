@@ -1,3 +1,33 @@
+/* Info box under player */
+.playlist-info-box {
+    margin: 18px 0 0 0;
+    padding: calc(var(--spacing) * 2) calc(var(--spacing) * 2.5);
+    background: white;
+    border: 2px solid var(--primary);
+    border-radius: 0;
+    font-size: 0.97rem;
+    color: var(--text-secondary);
+    text-align: center;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.04);
+    width: 100%;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 0;
+}
+
+.playlist-right-box {
+    /* Ensures the info box aligns with the .playlist-right box */
+    box-sizing: border-box;
+}
+
+.playlist-info-box a {
+    color: var(--primary-darker);
+    text-decoration: underline;
+    height: 100%;
+    font-size: 0.97em;
+}
+
 /* ===== PLAYLIST PAGE ===== */
 .playlist-section {
     display: flex;
@@ -9,10 +39,15 @@
     max-width: 1200px;
     margin: calc(var(--spacing) * 3) auto;
     background: transparent;
+    padding-top: calc(var(--spacing) * 50);
 }
 
 .playlist-left {
     flex: 1 1 320px;
+    flex: 1 1 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     background: white;
     border: 2px solid var(--primary);
     padding: calc(var(--spacing) * 2);
@@ -21,6 +56,7 @@
     box-shadow: 0 2px 12px rgba(0, 0, 0, 0.04);
     border-radius: 0;
     display: flex;
+    padding-bottom: calc(var(--spacing) * 2.25);
     flex-direction: column;
     gap: var(--spacing);
 }
@@ -441,22 +477,7 @@ a:hover {
     color: white;
 }
 
-.footer {
-    position: fixed;
-    left: 0;
-    bottom: 0;
-    width: 100vw;
-    text-align: center;
-    font-size: 0.85rem;
-    color: var(--text-secondary);
-    margin: 0;
-    padding: 4px 0 10px 0;
-    z-index: 100;
-    background: none;
-    box-shadow: none;
-}
-
-.footer a {
+.home-link {
     color: var(--secondary);
     text-decoration: underline;
     outline: none;
@@ -465,8 +486,8 @@ a:hover {
     padding: 0 0 0 0;
 }
 
-.footer a:hover,
-.footer a:focus {
+.home-link:hover,
+.home-link:focus {
     color: var(--primary-darker);
     background-color: var(--primary);
 }
