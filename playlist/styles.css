@@ -39,7 +39,6 @@
     max-width: 1200px;
     margin: calc(var(--spacing) * 3) auto;
     background: transparent;
-    padding-top: calc(var(--spacing) * 50);
 }
 
 .playlist-left {
