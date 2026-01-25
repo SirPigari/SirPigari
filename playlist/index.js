@@ -14,7 +14,9 @@ const spotifyLink = document.getElementById('spotify-link')
 let songs = []
 let currentIndex = 0
 let audio = new Audio()
+let pendingSeekPercent = null;
 let currentRating = -1
+
 
 fetch('songs/songs.json')
     .then(r => r.json())
@@ -264,12 +266,14 @@ prevBtn.addEventListener('click', () => {
 
 audio.addEventListener('timeupdate', () => {
     const current = audio.currentTime;
-    let duration = audio.duration || 0;
-    if (!isFinite(duration) || isNaN(duration) || duration <= 1) {
-        retryDuration();
-    } else {
-        timelineEl.value = duration ? (current / duration) * 100 : 0;
+    const duration = audio.duration;
+
+    if (isFinite(current) && !isNaN(current)) {
         currentTimeEl.textContent = formatTime(current);
+    }
+
+    if (isFinite(duration) && duration > 0) {
+        timelineEl.value = (current / duration) * 100;
         durationEl.textContent = formatTime(duration);
     }
 });
@@ -282,21 +286,37 @@ audio.addEventListener('ended', () => {
 });
 
 function retryDuration(retries = 0) {
-    if (retries > 10) return;
-    let duration = audio.duration;
-    if (!isFinite(duration) || isNaN(duration) || duration <= 1) {
+    if (retries > 20) return;
+
+    const duration = audio.duration;
+    if (!isFinite(duration) || duration <= 0) {
         setTimeout(() => retryDuration(retries + 1), 100);
-    } else {
-        durationEl.textContent = formatTime(duration);
-        timelineEl.value = (audio.currentTime / duration) * 100;
+        return;
     }
+
+    durationEl.textContent = formatTime(duration);
+
+    const current = audio.currentTime;
+    if (isFinite(current) && !isNaN(current)) {
+        timelineEl.value = (current / duration) * 100;
+    }
+
+    applyPendingSeek();
 }
 
 timelineEl.addEventListener('input', () => {
     if (timelineEl.disabled) return;
-    const duration = audio.duration
-    audio.currentTime = (timelineEl.value / 100) * duration
-})
+
+    const percent = timelineEl.value / 100;
+    const duration = audio.duration;
+
+    if (!isFinite(duration) || isNaN(duration) || duration <= 0) {
+        pendingSeekPercent = percent;
+        return;
+    }
+
+    audio.currentTime = percent * duration;
+});
 
 volumeEl.addEventListener('input', () => {
     const linear = parseFloat(volumeEl.value);
@@ -304,15 +324,33 @@ volumeEl.addEventListener('input', () => {
 })
 
 function formatTime(sec) {
-    const m = Math.floor(sec / 60)
-    const s = Math.floor(sec % 60)
-    return `${m}:${s.toString().padStart(2, '0')}`
+    if (!isFinite(sec) || isNaN(sec) || sec < 0) {
+        return '--:--';
+    }
+
+    const m = Math.floor(sec / 60);
+    const s = Math.floor(sec % 60);
+    return `${m}:${s.toString().padStart(2, '0')}`;
 }
 
 const playlistDiv = document.getElementById('playlist');
 let playlistHover = false;
 playlistDiv.addEventListener('mouseenter', () => { playlistHover = true; });
 playlistDiv.addEventListener('mouseleave', () => { playlistHover = false; });
+
+function applyPendingSeek() {
+    if (pendingSeekPercent === null) return;
+
+    const duration = audio.duration;
+    if (!isFinite(duration) || isNaN(duration) || duration <= 0) return;
+
+    audio.currentTime = pendingSeekPercent * duration;
+    pendingSeekPercent = null;
+}
+
+audio.addEventListener('loadedmetadata', () => {
+    applyPendingSeek();
+});
 
 function setupWheel() {
     const isMobile = window.matchMedia('(max-width: 768px)').matches;
