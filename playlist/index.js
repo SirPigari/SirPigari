@@ -313,9 +313,23 @@ const playlistDiv = document.getElementById('playlist');
 let playlistHover = false;
 playlistDiv.addEventListener('mouseenter', () => { playlistHover = true; });
 playlistDiv.addEventListener('mouseleave', () => { playlistHover = false; });
-window.addEventListener('wheel', (e) => {
+
+function setupWheel() {
+    const isMobile = window.matchMedia('(max-width: 768px)').matches;
+
+    if (!isMobile) {
+        window.addEventListener('wheel', onWheel, { passive: false });
+    } else {
+        window.removeEventListener('wheel', onWheel);
+    }
+}
+
+function onWheel(e) {
     if (playlistHover) {
         e.preventDefault();
         playlistDiv.scrollTop += e.deltaY;
     }
-}, { passive: false });
+}
+
+setupWheel();
+window.addEventListener('resize', setupWheel);
