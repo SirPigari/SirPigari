@@ -72,6 +72,14 @@
         "spotify": "https://open.spotify.com/track/3McBKxKZLXbE4czUezk5QG"
     },
     {
+        "title": "Eyes Without a Face",
+        "artist": "Billy Idol",
+        "file": "ewaf.opus",
+        "rating": 9.5,
+        "youtube": "https://www.youtu.be/9OFpfTd0EIs",
+        "spotify": "https://open.spotify.com/track/0pUVeEgZuNyFzIMKp67RbS"
+    },
+    {
         "title": "Enjoy the Silence",
         "artist": "Depeche Mode",
         "file": "ets.opus",

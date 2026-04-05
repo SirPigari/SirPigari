@@ -38,11 +38,11 @@
 
 <body>
     <!-- ===== SIDE NAVIGATION ===== -->
-    <nav class="side-nav">
-        <a href="#hero" class="active" aria-label="Home"></a>
-        <a href="#projects" aria-label="Projects"></a>
-        <a href="#about" aria-label="About"></a>
-        <a href="#experience" aria-label="Experience"></a>
+    <nav class="side-nav" id="side-nav">
+        <a href="#hero" aria-label="Home"> <span class="kitty"></span><span class="guitar"></span> </a>
+        <a href="#projects" aria-label="Projects"> <span class="kitty"></span><span class="guitar"></span> </a>
+        <a href="#about" aria-label="About"> <span class="kitty"></span><span class="guitar"></span> </a>
+        <a href="#experience" aria-label="Experience"> <span class="kitty"></span><span class="guitar"></span> </a>
     </nav>
 
     <!-- ===== HERO SECTION ===== -->
@@ -120,7 +120,7 @@
                 <!-- Project 1 -->
                 <div class="project-card">
                     <a href="https://github.com/SirPigari/lucia-rust#readme" target="_blank" class="project-image"><img
-                            src="assets/logo_lucia.png" alt="Lucia - Programming Language"></a>
+                            src="assets/logo_lucia.webp" alt="Lucia - Programming Language"></a>
                     <div class="project-content">
                         <h3>Lucia - Programming Language</h3>
                         <p>A lightweight, expressive scripting language with Python-like syntax.</p>
@@ -137,11 +137,31 @@
                         </div>
                     </div>
                 </div>
-
+                
                 <!-- Project 2 -->
                 <div class="project-card">
+                    <a href="https://github.com/SirPigari/amp#readme" style="text-decoration: none;" target="_blank"
+                        class="project-image">
+                        <img src="assets/AMP.webp" alt="amp - Media Player">
+                    </a>
+                    <div class="project-content">
+                        <h3>amp - Media Player</h3>
+                        <p>A simple media player using SDL2.</p>
+                        <div class="project-buttons">
+                            <a target="_blank" href="https://github.com/SirPigari/amp#readme" class="btn-small">Source</a>
+                        </div>
+                        <div class="project-tags">
+                            <span class="tag">media player</span>
+                            <span class="tag">c</span>
+                            <span class="tag">sdl2</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 3 -->
+                <div class="project-card">
                     <a href="https://github.com/SirPigari/f90c#readme" target="_blank" class="project-image"><img
-                            src="assets/logo_f90c.png" alt="F90C - Fortran 90 Compiler"></a>
+                            src="assets/logo_f90c.webp" alt="F90C - Fortran 90 Compiler"></a>
                     <div class="project-content">
                         <h3>F90C - Fortran 90 Compiler</h3>
                         <p>A lightweight single executable Fortran 90 compiler.</p>
@@ -153,27 +173,6 @@
                             <span class="tag">compiler</span>
                             <span class="tag">rust</span>
                             <span class="tag">fortran</span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Project 3 -->
-                <div class="project-card">
-                    <a href="https://github.com/SirPigari/lym#readme" style="text-decoration: none;" target="_blank"
-                        class="project-image">
-                        <h1>Lym</h1>
-                    </a>
-                    <div class="project-content">
-                        <h3>Lym - Lucia package manager</h3>
-                        <p>A package manager for the Lucia programming language.</p>
-                        <div class="project-buttons">
-                            <a target="_blank" href="https://github.com/SirPigari/lym#readme"
-                                class="btn-small">Source</a>
-                        </div>
-                        <div class="project-tags">
-                            <span class="tag">package manager</span>
-                            <span class="tag">rust</span>
-                            <span class="tag">lucia</span>
                         </div>
                     </div>
                 </div>
@@ -202,23 +201,22 @@
 
                 <!-- Project 5 -->
                 <div class="project-card">
-                    <a href="https://github.com/SirPigari/ImagNum#readme" style="text-decoration: none;" target="_blank"
+                    <a href="https://github.com/SirPigari/mewo#readme" style="text-decoration: none;" target="_blank"
                         class="project-image">
-                        <h1>ImagNum</h1>
+                        <h1>mewo</h1>
                     </a>
                     <div class="project-content">
-                        <h3>ImagNum</h3>
-                        <p>Library for numeric types made for Lucia programming language.</p>
+                        <h3>mewo</h3>
+                        <p>A lightweight build system designed for being an aliasing system more than the traditional make-like build
+                        systems.</p>
                         <div class="project-buttons">
-                            <a target="_blank" href="https://github.com/SirPigari/ImagNum#readme"
+                            <a target="_blank" href="https://github.com/SirPigari/mewo#readme"
                                 class="btn-small">Source</a>
-                            <a target="_blank" href="https://crates.io/crates/imagnum"
-                                class="btn-small secondary">Crates.io</a>
                         </div>
                         <div class="project-tags">
-                            <span class="tag">rust</span>
-                            <span class="tag">arithmetic</span>
-                            <span class="tag">library</span>
+                            <span class="tag">build system</span>
+                            <span class="tag">c</span>
+                            <span class="tag">interpreter</span>
                         </div>
                     </div>
                 </div>
@@ -226,7 +224,7 @@
                 <!-- Project 6 -->
                 <div class="project-card">
                     <a href="https://gitlab.com/SirPigari/skittle-chan#skittle-chan" target="_blank"
-                        class="project-image"><img src="assets/icon_skittle-chan.jpg" alt="Skittle-chan"></a>
+                        class="project-image"><img src="assets/icon_skittle-chan.webp" alt="Skittle-chan"></a>
                     <div class="project-content">
                         <h3>Skittle-chan</h3>
                         <p>A cute discord bot.</p>
@@ -282,8 +280,8 @@
                         I listen to music from <a class="text_link" href="https://www.tameimpala.com/"
                             target="_blank">Tame Impala</a>, <a class="text_link" href="https://theprodigy.com/"
                             target="_blank">Prodigy</a>, <a class="text_link" href="https://www.petshopboys.co.uk/"
-                            target="_blank">Pet Shop Boys</a> and
-                        others <a class="text_link" href="./playlist">(Full
+                            target="_blank">Pet Shop Boys</a>, <a class="text_link" href="https://takanaka.com/"
+                            target="_blank">Masayoshi Takanaka</a> (but not in this playlist) and others <a class="text_link" href="./playlist">(Full
                             playlist)</a>
                     </p>
                 </div>
@@ -295,6 +293,9 @@
             </div>
         </div>
     </section>
+
+    <img src="assets/takanaka.webp" alt="Masayoshi Takanaka" class="takanaka">
+    <img src="assets/takanaka-hand.webp" alt="Takanaka's Hand" class="takanaka-hand">
 
     <!-- ===== EXPERIENCE SECTION ===== -->
     <section id="experience">
@@ -361,20 +362,29 @@
             function updateActiveNav() {
                 let currentSection = '';
                 sections.forEach(section => {
-                    const sectionTop = section.offsetTop;
-                    const sectionHeight = section.clientHeight;
-                    if (window.pageYOffset >= sectionTop - 200) {
+                    if (window.pageYOffset >= section.offsetTop - 200) {
                         currentSection = section.getAttribute('id');
                     }
                 });
 
                 navLinks.forEach(link => {
-                    link.classList.remove('active');
-                    if (link.getAttribute('href') === `#${currentSection}`) {
-                        link.classList.add('active');
-                    }
+                    link.classList.toggle('active', link.getAttribute('href') === `#${currentSection}`);
                 });
             }
+
+            // init
+            (function () {
+                let currentSection = '';
+                sections.forEach(section => {
+                    if (window.pageYOffset >= section.offsetTop - 200) {
+                        currentSection = section.getAttribute('id');
+                    }
+                });
+                if (!currentSection) navLinks[0].classList.add('active');
+                else navLinks.forEach(link => {
+                    link.classList.toggle('active', link.getAttribute('href') === `#${currentSection}`);
+                });
+            })();
 
             window.addEventListener('scroll', updateActiveNav);
         });
@@ -389,6 +399,56 @@
                         block: 'start'
                     });
                 }
+            });
+        });
+
+        const kitties = document.querySelectorAll('.side-nav a .kitty');
+
+        kitties.forEach((kitty, index) => {
+            const storageKey = `kittyRotation_${index}`;
+            let rotation = parseFloat(localStorage.getItem(storageKey)) || 0;
+
+            const rpm = 45;
+            const degPerMs = (rpm * 360) / 60000;
+
+            let spinning = false;
+            let velocity = 0;
+            let targetVelocity = 0;
+            let lastTime = null;
+            const smoothFactor = 0.05;
+
+            kitty.style.transform = `scale(1) rotate(${rotation}deg)`;
+
+            function spin(timestamp) {
+                if (lastTime !== null) {
+                    const delta = timestamp - lastTime;
+
+                    velocity += (targetVelocity - velocity) * smoothFactor;
+
+                    rotation += velocity * delta;
+                    kitty.style.transform = `scale(1) rotate(${rotation}deg)`;
+                    localStorage.setItem(storageKey, rotation);
+                }
+
+                lastTime = timestamp;
+
+                if (Math.abs(velocity) > 0.001 || spinning) {
+                    requestAnimationFrame(spin);
+                }
+            }
+
+            kitty.addEventListener('mouseenter', () => {
+                spinning = true;
+                targetVelocity = degPerMs;
+                lastTime = null;
+                if (!lastTime) requestAnimationFrame(spin);
+            });
+
+            kitty.addEventListener('mouseleave', () => {
+                spinning = false;
+                targetVelocity = 0;
+                lastTime = null;
+                if (!lastTime) requestAnimationFrame(spin);
             });
         });
 
@@ -463,6 +523,9 @@
 
         initMobileCollapse();
         window.addEventListener('resize', initMobileCollapse);
+        
+        const viewportHeight = window.innerHeight;
+        console.log(viewportHeight);
 
         async function initWasmCanvas() {
             try {
@@ -499,26 +562,47 @@
                     }
                 };
 
+                let pendingMouse = null;
+                let rafScheduled = false;
+
+                const scheduleSend = () => {
+                    if (rafScheduled) return;
+                    rafScheduled = true;
+                    requestAnimationFrame(() => {
+                        rafScheduled = false;
+                        if (pendingMouse) {
+                            if (!isScrolling) {
+                                updateMousePosition(pendingMouse.x, pendingMouse.y);
+                            }
+                            pendingMouse = null;
+                        }
+                    });
+                };
+
                 ['mousemove', 'touchmove', 'touchstart'].forEach(eventType => {
                     canvas.addEventListener(eventType, e => {
-                        e.preventDefault();
                         const touch = e.touches ? e.touches[0] : null;
-                        const clientX = touch ? touch.clientX : e.clientX;
-                        const clientY = touch ? touch.clientY : e.clientY;
-                        updateMousePosition(clientX, clientY);
-                    }, { passive: false });
+                        const clientX = touch ? touch.clientX : (e.clientX ?? (e.changedTouches && e.changedTouches[0] && e.changedTouches[0].clientX));
+                        const clientY = touch ? touch.clientY : (e.clientY ?? (e.changedTouches && e.changedTouches[0] && e.changedTouches[0].clientY));
+                        if (clientX != null && clientY != null) {
+                            pendingMouse = { x: clientX, y: clientY };
+                            scheduleSend();
+                        }
+                    }, { passive: true });
                 });
+
+                let isScrolling = false;
+                let wheelTimeout = null;
 
                 const heroSection = document.querySelector('.hero');
                 if (heroSection) {
                     ['mousemove', 'touchmove', 'touchstart'].forEach(eventType => {
                         heroSection.addEventListener(eventType, e => {
-                            e.preventDefault();
                             const touch = e.touches ? e.touches[0] : null;
-                            const clientX = touch ? touch.clientX : e.clientX;
-                            const clientY = touch ? touch.clientY : e.clientY;
-                            updateMousePosition(clientX, clientY);
-                        }, { passive: false });
+                            const clientX = touch ? touch.clientX : (e.clientX ?? (e.changedTouches && e.changedTouches[0] && e.changedTouches[0].clientX));
+                            const clientY = touch ? touch.clientY : (e.clientY ?? (e.changedTouches && e.changedTouches[0] && e.changedTouches[0].clientY));
+                            if (clientX != null && clientY != null) updateMousePosition(clientX, clientY);
+                        }, { passive: true });
                     });
                 }
 
@@ -553,9 +637,10 @@
                         const c = document.getElementById('wasmCanvas');
                         if (c) {
                             c.addEventListener('wheel', e => {
-                                e.preventDefault();
-                                window.scrollBy(0, e.deltaY);
-                            }, { passive: false });
+                                isScrolling = true;
+                                if (wheelTimeout) clearTimeout(wheelTimeout);
+                                wheelTimeout = setTimeout(() => { isScrolling = false; }, 120);
+                            }, { passive: true });
                         }
                     }, 500);
                 };
@@ -597,6 +682,38 @@
         }
 
         window.addEventListener('load', initWasmCanvas);
+
+        (function () {
+            const baseHeight = 911;
+            const baseBottom = {
+                takanaka: 303,
+                hand: 347
+            };
+
+            function positionElements() {
+                const tEl = document.querySelector('.takanaka');
+                const hEl = document.querySelector('.takanaka-hand');
+                
+                if (!tEl || !hEl) return;
+
+                const vh = window.innerHeight;
+                
+                const heightDiff = vh - baseHeight;
+                const offset = heightDiff / 2;
+                
+                tEl.style.bottom = (baseBottom.takanaka + offset) + 'px';
+                hEl.style.bottom = (baseBottom.hand + offset) + 'px';
+            }
+
+            window.addEventListener('resize', positionElements);
+            document.addEventListener('DOMContentLoaded', positionElements);
+            window.addEventListener('load', positionElements);
+            
+            if (document.readyState === 'loading') {
+            } else {
+                positionElements();
+            }
+        })();
     </script>
 </body>
 
