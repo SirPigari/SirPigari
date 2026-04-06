@@ -653,10 +653,10 @@ section {
 }
 
 /* ==== EXPERIENCE CONTRIBUTIONS ===== */
-/* .experience-contributions {
-        margin-top: var(--spacing);
-        text-align: center;
-    } */
+.contributions-graph {
+    margin-top: var(--spacing);
+    text-align: center;
+}
 
 .contact-link:focus {
     outline: 2px solid var(--cyan);
@@ -926,4 +926,8 @@ footer {
     src: url("Acme 9 Regular.ttf") format("truetype");
     font-weight: normal;
     font-style: normal;
+}
+
+#contributions-section {
+    display: none;
 }
